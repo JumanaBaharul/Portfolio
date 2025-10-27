@@ -19,7 +19,6 @@ export const education = [
     school: 'Shiv Nadar University, Chennai',
     program: 'B.Tech in Artificial Intelligence and Data Science',
     period: 'Sep 2022 – Present',
-    gpa: '8.81/10.0',
   },
 ];
 
