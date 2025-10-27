@@ -5,7 +5,6 @@ import ExperienceTimeline from './components/ExperienceTimeline.jsx';
 import ResearchSpotlight from './components/ResearchSpotlight.jsx';
 import ProjectGrid from './components/ProjectGrid.jsx';
 import SkillGalaxy from './components/SkillGalaxy.jsx';
-import ResumeShowcase from './components/ResumeShowcase.jsx';
 import AchievementMarquee from './components/AchievementMarquee.jsx';
 import Footer from './components/Footer.jsx';
 import { profile, education, experiences, research, projects, skills, achievements, timelines } from './data/content.js';
@@ -38,11 +37,6 @@ const App = () => {
       <section id="skills" className="section">
         <h2 className="section-title gradient-text">Skill Galaxy</h2>
         <SkillGalaxy skills={skills} />
-      </section>
-
-      <section id="resume" className="section">
-        <h2 className="section-title gradient-text">Resume Artifact</h2>
-        <ResumeShowcase profile={profile} achievements={achievements} />
       </section>
 
       <AchievementMarquee achievements={achievements} />
