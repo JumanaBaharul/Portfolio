@@ -1,71 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import {
-  SiPython,
-  SiJavascript,
-  SiNumpy,
-  SiPandas,
-  SiScikitlearn,
-  SiKeras,
-  SiPytorch,
-  SiHuggingface,
-  SiOpenai,
-  SiTableau,
-  SiMatplotlib,
-  SiSeaborn,
-  SiHtml5,
-  SiCss3,
-  SiReact,
-  SiNodedotjs,
-  SiExpress,
-  SiMysql,
-  SiPostgresql,
-  SiMongodb,
-  SiGit,
-  SiPostman,
-  SiVisualstudiocode,
-  SiLeetcode,
-  SiC,
-} from 'react-icons/si';
-import { FaJava } from 'react-icons/fa';
-import { GiMeshNetwork, GiCircuitry, GiNetworkBars, GiProcessor } from 'react-icons/gi';
-import { TbArrowsExchange } from 'react-icons/tb';
-import { RiRobot2Line } from 'react-icons/ri';
-
-const iconMap = {
-  SiPython,
-  SiJavascript,
-  SiNumpy,
-  SiPandas,
-  SiScikitlearn,
-  SiKeras,
-  SiPytorch,
-  SiHuggingface,
-  SiOpenai,
-  SiTableau,
-  SiMatplotlib,
-  SiSeaborn,
-  SiHtml5,
-  SiCss3,
-  SiReact,
-  SiNodedotjs,
-  SiExpress,
-  SiMysql,
-  SiPostgresql,
-  SiMongodb,
-  SiGit,
-  SiPostman,
-  SiVisualstudiocode,
-  SiLeetcode,
-  SiC,
-  FaJava,
-  GiMeshNetwork,
-  GiCircuitry,
-  GiNetworkBars,
-  GiProcessor,
-  TbArrowsExchange,
-  RiRobot2Line,
-};
+import SkillIcon from './SkillIcon.jsx';
 
 const SkillGalaxy = ({ skills }) => {
   const chartRef = useRef(null);
@@ -198,15 +133,12 @@ const SkillGalaxy = ({ skills }) => {
           <article key={category.title} className="skill-card">
             <h3>{category.title}</h3>
             <div className="skill-icon-list">
-              {category.items.map((item) => {
-                const IconComponent = iconMap[item.icon];
-                return (
-                  <div key={item.name} className="skill-icon-chip">
-                    {IconComponent ? <IconComponent aria-hidden size={26} /> : <span style={{ fontSize: '1.5rem' }}>•</span>}
-                    <span>{item.name}</span>
-                  </div>
-                );
-              })}
+              {category.items.map((item) => (
+                <div key={item.name} className="skill-icon-chip">
+                  <SkillIcon name={item.icon} />
+                  <span>{item.name}</span>
+                </div>
+              ))}
             </div>
           </article>
         ))}
